@@ -11,11 +11,6 @@ body {
 
 html {
   overflow-x: hidden; /* Ensure no overflow on mobile */
-  box-sizing: border-box;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
 }
 
 /* Sticky Header */
@@ -27,8 +22,8 @@ header {
   z-index: 1000;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
+  align-items: center; /* Ensure content is vertically centered */
+  padding: 15px 20px; /* Add more vertical padding to increase space */
 }
 
 h1, h2, h3 {
@@ -48,46 +43,42 @@ a {
 /* Header Content */
 .header-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Distribute space between logo, title, and share buttons */
   align-items: center;
   width: 100%; /* Ensure header content spans full width */
 }
 
 .logo {
-  max-width: 120px;
+  max-width: 120px; /* Decreased size to make it proportional */
   height: auto;
-  margin-right: 20px;
+  margin-right: 20px; /* Space between logo and text */
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 36px; /* Adjust text size for better centering */
   color: white;
   flex-grow: 1; /* Allow the title to take up available space */
   text-align: center; /* Center the text */
 }
 
+/* Share container styling */
 .share-container {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 15px;
-  padding-right: 30px;
-}
-
-.share-label {
-  font-size: 18px;
-  color: #FFD700;
-  font-weight: bold;
+  justify-content: flex-end; /* Ensure alignment to the right */
+  gap: 10px; /* Adjusted gap to avoid overflow */
+  padding-right: 10px; /* Adjust padding on smaller screens */
+  flex-wrap: wrap; /* This ensures icons wrap if they don't fit */
 }
 
 .share-buttons {
   display: flex;
-  gap: 15px;
+  gap: 10px; /* Add space between the icons */
 }
 
 .share-logo {
-  width: 40px;
-  height: 40px;
+  width: 30px; /* Reduced size to make sure it fits on smaller screens */
+  height: 30px;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -133,7 +124,7 @@ h1 {
   color: #FFD700;
 }
 
-/* Form Section */
+/* Form Section (Wider and takes up more room) */
 .form-section {
   background-color: white;
   padding: 40px;
@@ -142,9 +133,6 @@ h1 {
   max-width: 900px;
   border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box; /* Added to handle padding/margin issues */
-  padding-left: 20px; /* Balanced padding */
-  padding-right: 20px; /* Balanced padding */
 }
 
 input, select, button {
@@ -154,9 +142,10 @@ input, select, button {
   border-radius: 8px;
   border: 1px solid #0057B7;
   font-size: 18px;
-  box-sizing: border-box; /* Added for padding calculation */
+  box-sizing: border-box; /* Ensures the elements are sized properly */
 }
 
+/* Adjust spacing and font size for form labels and inputs */
 #mpSection, #nameSection {
   margin-bottom: 20px;
 }
@@ -170,6 +159,7 @@ input, select, button {
   padding: 10px;
 }
 
+/* Remove blue background for autofilled fields in Chrome */
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
   -webkit-text-fill-color: #333 !important;
@@ -196,12 +186,13 @@ button:hover {
 #emailPreview {
   background-color: #f9f9f9;
   padding: 20px;
-  font-size: 16px;
+  font-size: 16px; /* Ensure readability on mobile */
   border-radius: 8px;
   border: 1px solid #ccc;
-  box-sizing: border-box;
+  overflow-x: auto; /* Fix for horizontal overflow */
 }
 
+/* Hidden textarea for copying email content */
 #copyEmailContent {
   position: absolute;
   left: -9999px;
@@ -212,14 +203,16 @@ button:hover {
   resize: none;
 }
 
-/* Overflow fixes */
-.container {
-  max-width: 100%;
-  overflow-x: hidden;
+/* Fix the text inside the white box */
+.intro-content,
+#formSection {
+  filter: none;
+  opacity: 1;
 }
 
-/* MEDIA QUERIES */
+/* MEDIA QUERIES FOR MOBILE OPTIMIZATION */
 @media only screen and (max-width: 768px) {
+  /* Adjust header */
   .header-content {
     flex-direction: row;
     justify-content: space-between;
@@ -237,10 +230,11 @@ button:hover {
   }
 
   .share-logo {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
 
+  /* Intro section adjustments */
   .intro-content h1 {
     font-size: 48px;
   }
@@ -254,6 +248,7 @@ button:hover {
     font-size: 20px;
   }
 
+  /* Form section adjustments */
   .form-section {
     padding: 30px;
     margin: 20px auto;
@@ -261,11 +256,24 @@ button:hover {
 
   input, select, button {
     width: 100%;
-    box-sizing: border-box;
+  }
+
+  /* Share container adjustments for smaller screens */
+  .share-container {
+    justify-content: center; /* Center icons on smaller screens */
+    padding-right: 0; /* Remove excess right padding */
+    padding-left: 0;
+  }
+
+  .share-logo {
+    width: 25px; /* Further reduced icon size on mobile */
+    height: 25px;
   }
 }
 
+/* Smaller screens like phones */
 @media only screen and (max-width: 480px) {
+  /* Adjust header */
   .logo {
     max-width: 80px;
   }
@@ -275,10 +283,11 @@ button:hover {
   }
 
   .share-logo {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
 
+  /* Intro content */
   .intro-content h1 {
     font-size: 36px;
   }
@@ -292,29 +301,48 @@ button:hover {
     font-size: 18px;
   }
 
+  /* Form section */
   .form-section {
     padding: 20px;
     margin: 10px auto;
   }
 
+  /* Form inputs */
   input, select, button {
     font-size: 16px;
     padding: 10px;
   }
 
+  /* Smaller text sizes for form labels */
   #mpLabel, #nameLabel {
-    font-size: 16px;
+    font-size: 16px; /* Reduced font size for mobile */
   }
 
-  /* Balance padding on both sides of the form inputs */
+  /* Ensure form sections fit within mobile screen */
   input, select, button {
     width: 100%;
     box-sizing: border-box;
-    padding-left: 15px;
-    padding-right: 15px;
   }
 
+  /* Ensure share buttons don’t sit too close to screen edges */
   .share-container {
     margin-right: 15px;
+  }
+}
+
+/* MEDIA QUERIES FOR LAPTOPS */
+@media only screen and (min-width: 1024px) {
+  /* Further increase font and button size on larger screens like laptops */
+  .intro-content h1 {
+    font-size: 80px;
+  }
+
+  .intro-content p {
+    font-size: 28px;
+  }
+
+  .intro-content button {
+    padding: 24px 70px;
+    font-size: 28px;
   }
 }
