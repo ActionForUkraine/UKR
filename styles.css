@@ -49,32 +49,35 @@ a {
 }
 
 .logo {
-  max-width: 120px;
+  max-width: 120px; /* Decreased size to make it proportional */
   height: auto;
-  margin-right: 20px;
+  margin-right: 20px; /* Space between logo and text */
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 36px; /* Adjust text size for better centering */
   color: white;
-  flex-grow: 1;
-  text-align: center;
+  flex-grow: 1; /* Allow the title to take up available space */
+  text-align: center; /* Center the text */
 }
 
 /* Share container styling */
 .share-container {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center; /* Centering the share buttons */
   flex-wrap: wrap; /* Ensure the logos wrap on smaller screens */
   gap: 10px;
-  padding-right: 10px;
-  padding-left: 10px; /* Ensure even padding on both sides */
+  width: 100%; /* Ensure the container doesn't exceed the screen width */
+  padding: 10px; /* Balanced padding on all sides */
+  box-sizing: border-box; /* Ensures padding is included in width */
 }
 
 .share-buttons {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap; /* Allow the share buttons to wrap if needed */
+  justify-content: center; /* Ensure the icons are centered */
 }
 
 .share-logo {
@@ -85,7 +88,7 @@ h1 {
 }
 
 .share-logo:hover {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Slight zoom on hover */
 }
 
 /* Intro Section */
@@ -125,7 +128,7 @@ h1 {
   color: #FFD700;
 }
 
-/* Form Section (Wider and takes up more room) */
+/* Form Section */
 .form-section {
   background-color: white;
   padding: 40px;
@@ -159,7 +162,6 @@ input, select, button {
   padding: 10px;
 }
 
-/* Remove blue background for autofilled fields in Chrome */
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
   -webkit-text-fill-color: #333 !important;
@@ -189,7 +191,6 @@ button:hover {
   font-size: 16px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  overflow-x: auto;
 }
 
 /* Hidden textarea for copying email content */
@@ -212,6 +213,7 @@ button:hover {
 
 /* MEDIA QUERIES FOR MOBILE OPTIMIZATION */
 @media only screen and (max-width: 768px) {
+  /* Adjust header */
   .header-content {
     flex-direction: row;
     justify-content: space-between;
@@ -229,16 +231,11 @@ button:hover {
   }
 
   .share-logo {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
   }
 
-  .share-container {
-    justify-content: center;
-    padding-right: 0;
-    padding-left: 0;
-  }
-
+  /* Intro section adjustments */
   .intro-content h1 {
     font-size: 48px;
   }
@@ -252,6 +249,7 @@ button:hover {
     font-size: 20px;
   }
 
+  /* Form section adjustments */
   .form-section {
     padding: 30px;
     margin: 20px auto;
@@ -262,7 +260,6 @@ button:hover {
   }
 }
 
-/* Smaller screens like phones */
 @media only screen and (max-width: 480px) {
   .logo {
     max-width: 80px;
@@ -277,6 +274,19 @@ button:hover {
     height: 25px;
   }
 
+  /* Share container adjustments */
+  .share-container {
+    padding: 10px 0;
+    justify-content: center;
+  }
+
+  .share-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Intro content */
   .intro-content h1 {
     font-size: 36px;
   }
