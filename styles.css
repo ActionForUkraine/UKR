@@ -83,6 +83,7 @@ h1 {
 .share-buttons {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap; /* Added this to ensure wrapping on smaller screens */
 }
 
 .share-logo {
