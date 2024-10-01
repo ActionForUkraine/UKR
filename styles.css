@@ -11,6 +11,11 @@ body {
 
 html {
   overflow-x: hidden; /* Ensure no overflow on mobile */
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 /* Sticky Header */
@@ -45,8 +50,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
+  width: 100%; /* Ensure header content spans full width */
 }
 
 .logo {
@@ -58,31 +62,38 @@ a {
 h1 {
   font-size: 36px;
   color: white;
-  flex-grow: 1;
-  text-align: center;
+  flex-grow: 1; /* Allow the title to take up available space */
+  text-align: center; /* Center the text */
 }
 
-/* Share container styling */
 .share-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  width: 100%; /* Ensure no overflow */
+  justify-content: flex-end;
+  gap: 15px;
+  padding-right: 30px;
+}
+
+.share-label {
+  font-size: 18px;
+  color: #FFD700;
+  font-weight: bold;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 15px;
 }
 
 .share-logo {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
 .share-logo:hover {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Slight zoom on hover */
 }
 
 /* Intro Section */
@@ -131,6 +142,9 @@ h1 {
   max-width: 900px;
   border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Added to handle padding/margin issues */
+  padding-left: 20px; /* Balanced padding */
+  padding-right: 20px; /* Balanced padding */
 }
 
 input, select, button {
@@ -140,7 +154,7 @@ input, select, button {
   border-radius: 8px;
   border: 1px solid #0057B7;
   font-size: 18px;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Added for padding calculation */
 }
 
 #mpSection, #nameSection {
@@ -185,10 +199,9 @@ button:hover {
   font-size: 16px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  box-sizing: border-box; /* Ensure consistent padding */
+  box-sizing: border-box;
 }
 
-/* Hidden textarea for copying email content */
 #copyEmailContent {
   position: absolute;
   left: -9999px;
@@ -199,15 +212,14 @@ button:hover {
   resize: none;
 }
 
-.intro-content,
-#formSection {
-  filter: none;
-  opacity: 1;
+/* Overflow fixes */
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-/* MEDIA QUERIES FOR MOBILE OPTIMIZATION */
+/* MEDIA QUERIES */
 @media only screen and (max-width: 768px) {
-  /* Adjust header */
   .header-content {
     flex-direction: row;
     justify-content: space-between;
@@ -229,7 +241,6 @@ button:hover {
     height: 30px;
   }
 
-  /* Intro section adjustments */
   .intro-content h1 {
     font-size: 48px;
   }
@@ -243,7 +254,6 @@ button:hover {
     font-size: 20px;
   }
 
-  /* Form section adjustments */
   .form-section {
     padding: 30px;
     margin: 20px auto;
@@ -251,10 +261,10 @@ button:hover {
 
   input, select, button {
     width: 100%;
+    box-sizing: border-box;
   }
 }
 
-/* Smaller screens like phones */
 @media only screen and (max-width: 480px) {
   .logo {
     max-width: 80px;
@@ -265,23 +275,10 @@ button:hover {
   }
 
   .share-logo {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
   }
 
-  /* Share container adjustments */
-  .share-container {
-    padding: 10px 0;
-    justify-content: center;
-  }
-
-  .share-buttons {
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
-
-  /* Intro content */
   .intro-content h1 {
     font-size: 36px;
   }
@@ -295,7 +292,6 @@ button:hover {
     font-size: 18px;
   }
 
-  /* Form section */
   .form-section {
     padding: 20px;
     margin: 10px auto;
@@ -310,28 +306,15 @@ button:hover {
     font-size: 16px;
   }
 
+  /* Balance padding on both sides of the form inputs */
   input, select, button {
     width: 100%;
     box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .share-container {
     margin-right: 15px;
-  }
-}
-
-/* MEDIA QUERIES FOR LAPTOPS */
-@media only screen and (min-width: 1024px) {
-  .intro-content h1 {
-    font-size: 80px;
-  }
-
-  .intro-content p {
-    font-size: 28px;
-  }
-
-  .intro-content button {
-    padding: 24px 70px;
-    font-size: 28px;
   }
 }
