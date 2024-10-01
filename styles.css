@@ -195,6 +195,11 @@ button:hover {
   font-size: 16px; /* Ensure readability on mobile */
   border-radius: 8px;
   border: 1px solid #ccc;
+  /* Add padding to prevent text from touching the edges */
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+  max-width: 900px; /* Added a maximum width to ensure it doesn’t stretch too far */
 }
 
 /* Hidden textarea for copying email content */
@@ -261,6 +266,11 @@ button:hover {
 
   input, select, button {
     width: 100%;
+  }
+
+  #emailPreview {
+    padding-left: 10px; /* Extra padding for mobile */
+    padding-right: 10px; /* Extra padding for mobile */
   }
 }
 
