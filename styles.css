@@ -22,8 +22,8 @@ header {
   z-index: 1000;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Ensure content is vertically centered */
-  padding: 15px 20px; /* Add more vertical padding to increase space */
+  align-items: center;
+  padding: 15px 20px;
 }
 
 h1, h2, h3 {
@@ -43,41 +43,35 @@ a {
 /* Header Content */
 .header-content {
   display: flex;
-  justify-content: space-between; /* Distribute space between logo, title, and share buttons */
+  justify-content: space-between;
   align-items: center;
-  width: 100%; /* Ensure header content spans full width */
+  width: 100%;
+  flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
 }
 
 .logo {
-  max-width: 120px; /* Decreased size to make it proportional */
+  max-width: 120px;
   height: auto;
-  margin-right: 20px; /* Space between logo and text */
+  margin-right: 20px;
 }
 
 h1 {
-  font-size: 36px; /* Adjust text size for better centering */
+  font-size: 36px;
   color: white;
-  flex-grow: 1; /* Allow the title to take up available space */
-  text-align: center; /* Center the text */
+  flex-grow: 1;
+  text-align: center;
 }
 
 /* Share container styling */
 .share-container {
   display: flex;
   align-items: center;
-  justify-content: center; /* Centering the share buttons */
-  flex-wrap: wrap; /* Ensure the logos wrap on smaller screens */
+  justify-content: center;
   gap: 10px;
-  width: 100%; /* Ensure the container doesn't exceed the screen width */
-  padding: 10px; /* Balanced padding on all sides */
-  box-sizing: border-box; /* Ensures padding is included in width */
-}
-
-.share-buttons {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap; /* Allow the share buttons to wrap if needed */
-  justify-content: center; /* Ensure the icons are centered */
+  padding: 10px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 100%; /* Ensure no overflow */
 }
 
 .share-logo {
@@ -88,7 +82,7 @@ h1 {
 }
 
 .share-logo:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
+  transform: scale(1.1);
 }
 
 /* Intro Section */
@@ -191,6 +185,7 @@ button:hover {
   font-size: 16px;
   border-radius: 8px;
   border: 1px solid #ccc;
+  box-sizing: border-box; /* Ensure consistent padding */
 }
 
 /* Hidden textarea for copying email content */
@@ -204,7 +199,6 @@ button:hover {
   resize: none;
 }
 
-/* Fix the text inside the white box */
 .intro-content,
 #formSection {
   filter: none;
@@ -260,6 +254,7 @@ button:hover {
   }
 }
 
+/* Smaller screens like phones */
 @media only screen and (max-width: 480px) {
   .logo {
     max-width: 80px;
@@ -300,6 +295,7 @@ button:hover {
     font-size: 18px;
   }
 
+  /* Form section */
   .form-section {
     padding: 20px;
     margin: 10px auto;
