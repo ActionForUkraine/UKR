@@ -11,6 +11,11 @@ body {
 
 html {
   overflow-x: hidden; /* Ensure no overflow on mobile */
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 /* Sticky Header */
@@ -24,6 +29,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
+  box-sizing: border-box; /* Make sure padding is included in width */
 }
 
 h1, h2, h3 {
@@ -148,7 +154,6 @@ input, select, button {
   box-sizing: border-box;
 }
 
-/* Adjust spacing and font size for form labels and inputs */
 #mpSection, #nameSection {
   margin-bottom: 20px;
 }
@@ -194,7 +199,6 @@ button:hover {
   box-sizing: border-box;
 }
 
-/* Hidden textarea for copying email content */
 #copyEmailContent {
   position: absolute;
   left: -9999px;
@@ -205,7 +209,13 @@ button:hover {
   resize: none;
 }
 
-/* Media Queries for Mobile */
+/* Overflow fixes */
+.container {
+  max-width: 100%;
+  overflow-x: hidden; /* Prevent content overflow */
+}
+
+/* Mobile Optimization */
 @media only screen and (max-width: 768px) {
   .header-content {
     flex-direction: row;
