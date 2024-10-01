@@ -46,7 +46,6 @@ a {
   justify-content: space-between; /* Distribute space between logo, title, and share buttons */
   align-items: center;
   width: 100%; /* Ensure header content spans full width */
-  flex-wrap: wrap; /* Ensure items wrap on small screens */
 }
 
 .logo {
@@ -131,7 +130,7 @@ h1 {
   color: #FFD700;
 }
 
-/* Form Section (Wider and takes up more room) */
+/* Form Section */
 .form-section {
   background-color: white;
   padding: 40px;
@@ -140,16 +139,17 @@ h1 {
   max-width: 900px;
   border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Ensure padding and borders are accounted for in width */
 }
 
 input, select, button {
-  width: 100%;
+  width: calc(100% - 20px); /* Subtract padding to maintain consistent width */
   padding: 12px;
   margin: 10px 0;
   border-radius: 8px;
   border: 1px solid #0057B7;
   font-size: 18px;
-  box-sizing: border-box; /* Ensures the elements are sized properly */
+  box-sizing: border-box;
 }
 
 /* Adjust spacing and font size for form labels and inputs */
@@ -196,7 +196,9 @@ button:hover {
   font-size: 16px; /* Ensure readability on mobile */
   border-radius: 8px;
   border: 1px solid #ccc;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Include padding in element's width */
+  margin: 0 auto;
+  width: 100%;
 }
 
 /* Hidden textarea for copying email content */
@@ -236,13 +238,6 @@ button:hover {
     margin: 0 10px;
   }
 
-  .share-container {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-    margin: 0 auto;
-  }
-
   .share-logo {
     width: 30px;
     height: 30px;
@@ -264,15 +259,21 @@ button:hover {
 
   /* Form section adjustments */
   .form-section {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 600px; /* To avoid excessive width on larger mobiles */
+    padding: 30px;
+    margin: 20px auto;
   }
 
-  input, select, button, #emailPreview {
-    width: 100%; /* Ensures elements span the width of the container */
+  input, select, button {
+    width: calc(100% - 20px); /* Adjust width to consider padding */
+  }
+
+  /* Mobile centering for form */
+  #mpSelect, #userName, #emailPreview, input, select, textarea, button {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: calc(100% - 20px);
     box-sizing: border-box;
   }
 }
@@ -325,7 +326,7 @@ button:hover {
   }
 
   /* Ensure form sections fit within mobile screen */
-  input, select, button, #emailPreview {
+  input, select, button {
     width: 100%;
     box-sizing: border-box;
   }
