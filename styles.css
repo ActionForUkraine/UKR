@@ -22,8 +22,8 @@ header {
   z-index: 1000;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Ensure content is vertically centered */
-  padding: 15px 20px; /* Add more vertical padding to increase space */
+  align-items: center;
+  padding: 15px 20px;
 }
 
 h1, h2, h3 {
@@ -40,34 +40,32 @@ a {
   color: #0057B7;
 }
 
-/* Header Content */
 .header-content {
   display: flex;
-  justify-content: space-between; /* Distribute space between logo, title, and share buttons */
+  justify-content: space-between;
   align-items: center;
-  width: 100%; /* Ensure header content spans full width */
+  width: 100%; 
 }
 
 .logo {
-  max-width: 120px; /* Decreased size to make it proportional */
+  max-width: 120px;
   height: auto;
-  margin-right: 20px; /* Space between logo and text */
+  margin-right: 20px;
 }
 
 h1 {
-  font-size: 36px; /* Adjust text size for better centering */
+  font-size: 36px;
   color: white;
-  flex-grow: 1; /* Allow the title to take up available space */
-  text-align: center; /* Center the text */
+  flex-grow: 1;
+  text-align: center;
 }
 
-/* Share container styling */
 .share-container {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Ensure alignment to the right */
-  gap: 15px; /* Add space between the icons */
-  padding-right: 30px; /* Add space between share buttons and the right edge */
+  justify-content: flex-end;
+  gap: 15px;
+  padding-right: 30px;
 }
 
 .share-label {
@@ -76,7 +74,6 @@ h1 {
   font-weight: bold;
 }
 
-/* Share buttons styling */
 .share-buttons {
   display: flex;
   gap: 15px;
@@ -90,10 +87,9 @@ h1 {
 }
 
 .share-logo:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
+  transform: scale(1.1);
 }
 
-/* Intro Section */
 .intro-section {
   height: 80vh;
   display: flex;
@@ -139,11 +135,11 @@ h1 {
   max-width: 900px;
   border-radius: 8px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box; /* Ensure padding and borders are accounted for in width */
+  box-sizing: border-box; /* Added to handle padding/margin issues */
 }
 
 input, select, button {
-  width: calc(100% - 20px); /* Subtract padding to maintain consistent width */
+  width: 100%;
   padding: 12px;
   margin: 10px 0;
   border-radius: 8px;
@@ -166,7 +162,6 @@ input, select, button {
   padding: 10px;
 }
 
-/* Remove blue background for autofilled fields in Chrome */
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
   -webkit-text-fill-color: #333 !important;
@@ -193,12 +188,10 @@ button:hover {
 #emailPreview {
   background-color: #f9f9f9;
   padding: 20px;
-  font-size: 16px; /* Ensure readability on mobile */
+  font-size: 16px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  box-sizing: border-box; /* Include padding in element's width */
-  margin: 0 auto;
-  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Hidden textarea for copying email content */
@@ -212,16 +205,8 @@ button:hover {
   resize: none;
 }
 
-/* Fix the text inside the white box */
-.intro-content,
-#formSection {
-  filter: none;
-  opacity: 1;
-}
-
-/* MEDIA QUERIES FOR MOBILE OPTIMIZATION */
+/* Media Queries for Mobile */
 @media only screen and (max-width: 768px) {
-  /* Adjust header */
   .header-content {
     flex-direction: row;
     justify-content: space-between;
@@ -243,7 +228,6 @@ button:hover {
     height: 30px;
   }
 
-  /* Intro section adjustments */
   .intro-content h1 {
     font-size: 48px;
   }
@@ -257,30 +241,18 @@ button:hover {
     font-size: 20px;
   }
 
-  /* Form section adjustments */
   .form-section {
     padding: 30px;
     margin: 20px auto;
   }
 
   input, select, button {
-    width: calc(100% - 20px); /* Adjust width to consider padding */
-  }
-
-  /* Mobile centering for form */
-  #mpSelect, #userName, #emailPreview, input, select, textarea, button {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: calc(100% - 20px);
+    width: 100%;
     box-sizing: border-box;
   }
 }
 
-/* Smaller screens like phones */
 @media only screen and (max-width: 480px) {
-  /* Adjust header */
   .logo {
     max-width: 80px;
   }
@@ -294,7 +266,6 @@ button:hover {
     height: 30px;
   }
 
-  /* Intro content */
   .intro-content h1 {
     font-size: 36px;
   }
@@ -308,48 +279,26 @@ button:hover {
     font-size: 18px;
   }
 
-  /* Form section */
   .form-section {
     padding: 20px;
     margin: 10px auto;
   }
 
-  /* Form inputs */
   input, select, button {
     font-size: 16px;
     padding: 10px;
   }
 
-  /* Smaller text sizes for form labels */
   #mpLabel, #nameLabel {
-    font-size: 16px; /* Reduced font size for mobile */
+    font-size: 16px;
   }
 
-  /* Ensure form sections fit within mobile screen */
   input, select, button {
     width: 100%;
     box-sizing: border-box;
   }
 
-  /* Ensure share buttons don’t sit too close to screen edges */
   .share-container {
     margin-right: 15px;
-  }
-}
-
-/* MEDIA QUERIES FOR LAPTOPS */
-@media only screen and (min-width: 1024px) {
-  /* Further increase font and button size on larger screens like laptops */
-  .intro-content h1 {
-    font-size: 80px;
-  }
-
-  .intro-content p {
-    font-size: 28px;
-  }
-
-  .intro-content button {
-    padding: 24px 70px;
-    font-size: 28px;
   }
 }
