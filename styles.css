@@ -46,7 +46,7 @@ a {
   justify-content: space-between; /* Distribute space between logo, title, and share buttons */
   align-items: center;
   width: 100%; /* Ensure header content spans full width */
-  padding: 0 15px; /* Add padding for mobile */
+  flex-wrap: wrap; /* Ensure items wrap on small screens */
 }
 
 .logo {
@@ -150,8 +150,6 @@ input, select, button {
   border: 1px solid #0057B7;
   font-size: 18px;
   box-sizing: border-box; /* Ensures the elements are sized properly */
-  padding-left: 20px; /* Ensure equal space on left and right */
-  padding-right: 20px; /* Ensure equal space on left and right */
 }
 
 /* Adjust spacing and font size for form labels and inputs */
@@ -198,9 +196,6 @@ button:hover {
   font-size: 16px; /* Ensure readability on mobile */
   border-radius: 8px;
   border: 1px solid #ccc;
-  margin: 20px 0;
-  display: block; /* Ensure it's visible */
-  width: calc(100% - 40px); /* Ensure padding is equal on both sides */
   box-sizing: border-box;
 }
 
@@ -213,6 +208,13 @@ button:hover {
   opacity: 0;
   pointer-events: none;
   resize: none;
+}
+
+/* Fix the text inside the white box */
+.intro-content,
+#formSection {
+  filter: none;
+  opacity: 1;
 }
 
 /* MEDIA QUERIES FOR MOBILE OPTIMIZATION */
@@ -232,6 +234,13 @@ button:hover {
     font-size: 28px;
     text-align: center;
     margin: 0 10px;
+  }
+
+  .share-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    margin: 0 auto;
   }
 
   .share-logo {
@@ -255,19 +264,75 @@ button:hover {
 
   /* Form section adjustments */
   .form-section {
-    padding: 30px;
-    margin: 20px auto;
-  }
-
-  input, select, button {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
     width: 100%;
+    max-width: 600px; /* To avoid excessive width on larger mobiles */
   }
 
-  /* Fix for the email preview on mobile */
-  #emailPreview {
-    width: calc(100% - 30px); /* Adjust width on mobile */
-    padding: 15px;
-    margin: 15px 0;
+  input, select, button, #emailPreview {
+    width: 100%; /* Ensures elements span the width of the container */
+    box-sizing: border-box;
+  }
+}
+
+/* Smaller screens like phones */
+@media only screen and (max-width: 480px) {
+  /* Adjust header */
+  .logo {
+    max-width: 80px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .share-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Intro content */
+  .intro-content h1 {
+    font-size: 36px;
+  }
+
+  .intro-content p {
+    font-size: 16px;
+  }
+
+  .intro-content button {
+    padding: 12px 30px;
+    font-size: 18px;
+  }
+
+  /* Form section */
+  .form-section {
+    padding: 20px;
+    margin: 10px auto;
+  }
+
+  /* Form inputs */
+  input, select, button {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  /* Smaller text sizes for form labels */
+  #mpLabel, #nameLabel {
+    font-size: 16px; /* Reduced font size for mobile */
+  }
+
+  /* Ensure form sections fit within mobile screen */
+  input, select, button, #emailPreview {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Ensure share buttons don’t sit too close to screen edges */
+  .share-container {
+    margin-right: 15px;
   }
 }
 
