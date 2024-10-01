@@ -131,7 +131,7 @@ h1 {
   color: #FFD700;
 }
 
-/* Form Section */
+/* Form Section (Wider and takes up more room) */
 .form-section {
   background-color: white;
   padding: 40px;
@@ -150,8 +150,11 @@ input, select, button {
   border: 1px solid #0057B7;
   font-size: 18px;
   box-sizing: border-box; /* Ensures the elements are sized properly */
+  padding-left: 20px; /* Ensure equal space on left and right */
+  padding-right: 20px; /* Ensure equal space on left and right */
 }
 
+/* Adjust spacing and font size for form labels and inputs */
 #mpSection, #nameSection {
   margin-bottom: 20px;
 }
@@ -195,6 +198,10 @@ button:hover {
   font-size: 16px; /* Ensure readability on mobile */
   border-radius: 8px;
   border: 1px solid #ccc;
+  margin: 20px 0;
+  display: block; /* Ensure it's visible */
+  width: calc(100% - 40px); /* Ensure padding is equal on both sides */
+  box-sizing: border-box;
 }
 
 /* Hidden textarea for copying email content */
@@ -215,12 +222,10 @@ button:hover {
     flex-direction: row;
     justify-content: space-between;
     padding: 10px 15px;
-    flex-wrap: wrap; /* Allow elements to stack if necessary */
   }
 
   .logo {
     max-width: 80px;
-    margin-right: 10px; /* Reduce margin */
   }
 
   h1 {
@@ -258,83 +263,17 @@ button:hover {
     width: 100%;
   }
 
-  /* Mobile specific fix for alignment and overflow */
+  /* Fix for the email preview on mobile */
   #emailPreview {
+    width: calc(100% - 30px); /* Adjust width on mobile */
     padding: 15px;
-    margin: 0 10px;
-    border-radius: 6px;
-    word-wrap: break-word; /* Ensure long words don’t overflow */
-    box-sizing: border-box;
-  }
-}
-
-/* Smaller screens like phones */
-@media only screen and (max-width: 480px) {
-  /* Adjust header */
-  .logo {
-    max-width: 80px;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-
-  .share-logo {
-    width: 30px;
-    height: 30px;
-  }
-
-  /* Intro content */
-  .intro-content h1 {
-    font-size: 36px;
-  }
-
-  .intro-content p {
-    font-size: 16px;
-  }
-
-  .intro-content button {
-    padding: 12px 30px;
-    font-size: 18px;
-  }
-
-  /* Form section */
-  .form-section {
-    padding: 20px;
-    margin: 10px auto;
-  }
-
-  /* Form inputs */
-  input, select, button {
-    font-size: 16px;
-    padding: 10px;
-  }
-
-  /* Smaller text sizes for form labels */
-  #mpLabel, #nameLabel {
-    font-size: 16px; /* Reduced font size for mobile */
-  }
-
-  /* Ensure form sections fit within mobile screen */
-  input, select, button {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* Ensure share buttons don’t sit too close to screen edges */
-  .share-container {
-    margin-right: 15px;
-  }
-
-  /* Fix for mobile right-padding issue */
-  #emailPreview {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 15px 0;
   }
 }
 
 /* MEDIA QUERIES FOR LAPTOPS */
 @media only screen and (min-width: 1024px) {
+  /* Further increase font and button size on larger screens like laptops */
   .intro-content h1 {
     font-size: 80px;
   }
