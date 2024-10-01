@@ -49,42 +49,43 @@ a {
 }
 
 .logo {
-  max-width: 120px; /* Decreased size to make it proportional */
+  max-width: 120px;
   height: auto;
-  margin-right: 20px; /* Space between logo and text */
+  margin-right: 20px;
 }
 
 h1 {
-  font-size: 36px; /* Adjust text size for better centering */
+  font-size: 36px;
   color: white;
-  flex-grow: 1; /* Allow the title to take up available space */
-  text-align: center; /* Center the text */
+  flex-grow: 1;
+  text-align: center;
 }
 
 /* Share container styling */
 .share-container {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Ensure alignment to the right */
-  gap: 10px; /* Adjusted gap to avoid overflow */
-  padding-right: 10px; /* Adjust padding on smaller screens */
-  flex-wrap: wrap; /* This ensures icons wrap if they don't fit */
+  justify-content: flex-end;
+  flex-wrap: wrap; /* Ensure the logos wrap on smaller screens */
+  gap: 10px;
+  padding-right: 10px;
+  padding-left: 10px; /* Ensure even padding on both sides */
 }
 
 .share-buttons {
   display: flex;
-  gap: 10px; /* Add space between the icons */
+  gap: 10px;
 }
 
 .share-logo {
-  width: 30px; /* Reduced size to make sure it fits on smaller screens */
+  width: 30px;
   height: 30px;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
 .share-logo:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
+  transform: scale(1.1);
 }
 
 /* Intro Section */
@@ -142,10 +143,9 @@ input, select, button {
   border-radius: 8px;
   border: 1px solid #0057B7;
   font-size: 18px;
-  box-sizing: border-box; /* Ensures the elements are sized properly */
+  box-sizing: border-box;
 }
 
-/* Adjust spacing and font size for form labels and inputs */
 #mpSection, #nameSection {
   margin-bottom: 20px;
 }
@@ -186,10 +186,10 @@ button:hover {
 #emailPreview {
   background-color: #f9f9f9;
   padding: 20px;
-  font-size: 16px; /* Ensure readability on mobile */
+  font-size: 16px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  overflow-x: auto; /* Fix for horizontal overflow */
+  overflow-x: auto;
 }
 
 /* Hidden textarea for copying email content */
@@ -212,7 +212,6 @@ button:hover {
 
 /* MEDIA QUERIES FOR MOBILE OPTIMIZATION */
 @media only screen and (max-width: 768px) {
-  /* Adjust header */
   .header-content {
     flex-direction: row;
     justify-content: space-between;
@@ -234,7 +233,12 @@ button:hover {
     height: 25px;
   }
 
-  /* Intro section adjustments */
+  .share-container {
+    justify-content: center;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
   .intro-content h1 {
     font-size: 48px;
   }
@@ -248,7 +252,6 @@ button:hover {
     font-size: 20px;
   }
 
-  /* Form section adjustments */
   .form-section {
     padding: 30px;
     margin: 20px auto;
@@ -257,23 +260,10 @@ button:hover {
   input, select, button {
     width: 100%;
   }
-
-  /* Share container adjustments for smaller screens */
-  .share-container {
-    justify-content: center; /* Center icons on smaller screens */
-    padding-right: 0; /* Remove excess right padding */
-    padding-left: 0;
-  }
-
-  .share-logo {
-    width: 25px; /* Further reduced icon size on mobile */
-    height: 25px;
-  }
 }
 
 /* Smaller screens like phones */
 @media only screen and (max-width: 480px) {
-  /* Adjust header */
   .logo {
     max-width: 80px;
   }
@@ -287,7 +277,6 @@ button:hover {
     height: 25px;
   }
 
-  /* Intro content */
   .intro-content h1 {
     font-size: 36px;
   }
@@ -301,30 +290,25 @@ button:hover {
     font-size: 18px;
   }
 
-  /* Form section */
   .form-section {
     padding: 20px;
     margin: 10px auto;
   }
 
-  /* Form inputs */
   input, select, button {
     font-size: 16px;
     padding: 10px;
   }
 
-  /* Smaller text sizes for form labels */
   #mpLabel, #nameLabel {
-    font-size: 16px; /* Reduced font size for mobile */
+    font-size: 16px;
   }
 
-  /* Ensure form sections fit within mobile screen */
   input, select, button {
     width: 100%;
     box-sizing: border-box;
   }
 
-  /* Ensure share buttons don’t sit too close to screen edges */
   .share-container {
     margin-right: 15px;
   }
@@ -332,7 +316,6 @@ button:hover {
 
 /* MEDIA QUERIES FOR LAPTOPS */
 @media only screen and (min-width: 1024px) {
-  /* Further increase font and button size on larger screens like laptops */
   .intro-content h1 {
     font-size: 80px;
   }
