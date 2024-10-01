@@ -264,6 +264,17 @@ button:hover {
     width: 100%;
     box-sizing: border-box;
   }
+
+  /* Move share options below title */
+  .share-container {
+    justify-content: center;
+    margin-top: 20px; /* Add space above the share container */
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: center; /* Center the header content */
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -321,5 +332,16 @@ button:hover {
 
   .share-container {
     margin-right: 15px;
+  }
+
+  /* Move share options below title */
+  .share-container {
+    justify-content: center;
+    margin-top: 20px; /* Add space above the share container */
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: center; /* Center the header content */
   }
 }
