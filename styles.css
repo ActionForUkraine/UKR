@@ -46,6 +46,7 @@ a {
   justify-content: space-between; /* Distribute space between logo, title, and share buttons */
   align-items: center;
   width: 100%; /* Ensure header content spans full width */
+  padding: 0 15px; /* Add padding for mobile */
 }
 
 .logo {
@@ -130,7 +131,7 @@ h1 {
   color: #FFD700;
 }
 
-/* Form Section (Wider and takes up more room) */
+/* Form Section */
 .form-section {
   background-color: white;
   padding: 40px;
@@ -151,7 +152,6 @@ input, select, button {
   box-sizing: border-box; /* Ensures the elements are sized properly */
 }
 
-/* Adjust spacing and font size for form labels and inputs */
 #mpSection, #nameSection {
   margin-bottom: 20px;
 }
@@ -195,11 +195,6 @@ button:hover {
   font-size: 16px; /* Ensure readability on mobile */
   border-radius: 8px;
   border: 1px solid #ccc;
-  /* Add padding to prevent text from touching the edges */
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 0 auto;
-  max-width: 900px; /* Added a maximum width to ensure it doesn’t stretch too far */
 }
 
 /* Hidden textarea for copying email content */
@@ -213,13 +208,6 @@ button:hover {
   resize: none;
 }
 
-/* Fix the text inside the white box */
-.intro-content,
-#formSection {
-  filter: none;
-  opacity: 1;
-}
-
 /* MEDIA QUERIES FOR MOBILE OPTIMIZATION */
 @media only screen and (max-width: 768px) {
   /* Adjust header */
@@ -227,10 +215,12 @@ button:hover {
     flex-direction: row;
     justify-content: space-between;
     padding: 10px 15px;
+    flex-wrap: wrap; /* Allow elements to stack if necessary */
   }
 
   .logo {
     max-width: 80px;
+    margin-right: 10px; /* Reduce margin */
   }
 
   h1 {
@@ -268,9 +258,13 @@ button:hover {
     width: 100%;
   }
 
+  /* Mobile specific fix for alignment and overflow */
   #emailPreview {
-    padding-left: 10px; /* Extra padding for mobile */
-    padding-right: 10px; /* Extra padding for mobile */
+    padding: 15px;
+    margin: 0 10px;
+    border-radius: 6px;
+    word-wrap: break-word; /* Ensure long words don’t overflow */
+    box-sizing: border-box;
   }
 }
 
@@ -331,11 +325,16 @@ button:hover {
   .share-container {
     margin-right: 15px;
   }
+
+  /* Fix for mobile right-padding issue */
+  #emailPreview {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 /* MEDIA QUERIES FOR LAPTOPS */
 @media only screen and (min-width: 1024px) {
-  /* Further increase font and button size on larger screens like laptops */
   .intro-content h1 {
     font-size: 80px;
   }
